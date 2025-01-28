@@ -1,0 +1,218 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat";
+  transition: 0 0.6s ease;
+}
+body {
+  width: 100vw;
+  height: 100vh;
+  background-image: url("img/back.jpg");
+  background-position: center;
+  background-size: 100%;
+
+  background-repeat: no-repeat;
+}
+.loader-back-img {
+  width: 100%;
+  position: fixed;
+  z-index: 999;
+  height: 100%;
+  background-image: url("img/back.jpg");
+  background-position: center;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  opacity: 1;
+}
+.hidden {
+  display: none;
+}
+.loader-back {
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.389);
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.loader {
+  width: 48px;
+  height: 48px;
+  display: block;
+  margin: 20px auto;
+  box-sizing: border-box;
+  position: relative;
+}
+.loader::after {
+  content: "";
+  box-sizing: border-box;
+  width: 48px;
+  height: 48px;
+  left: 0;
+  bottom: 0;
+  position: absolute;
+  border-radius: 50% 50% 0;
+  border: 15px solid #fff;
+  transform: rotate(45deg) translate(0, 0);
+  box-sizing: border-box;
+  animation: animMarker 0.4s ease-in-out infinite alternate;
+}
+.loader::before {
+  content: "";
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  top: 150%;
+  width: 24px;
+  height: 4px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.2);
+  animation: animShadow 0.4s ease-in-out infinite alternate;
+}
+
+@keyframes animMarker {
+  0% {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  100% {
+    transform: rotate(45deg) translate(-5px, -5px);
+  }
+}
+
+@keyframes animShadow {
+  0% {
+    transform: scale(0.5);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.app {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.box {
+  width: 1000px;
+  height: 600px;
+  border: 2px solid white;
+  box-shadow: 0px 0px 10px white;
+  border-radius: 20px;
+  padding: 30px;
+  backdrop-filter: blur(3px);
+  background-color: rgba(0, 0, 0, 0.193);
+}
+.title {
+  width: 100%;
+  text-align: center;
+  color: white;
+  padding: 15px;
+}
+.head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 30px;
+}
+.head form {
+  width: 100%;
+  padding: 10px 0;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 15px;
+}
+.head input {
+  width: 350px;
+  height: 35px;
+  outline: none;
+  border: none;
+  background-color: rgba(0, 0, 0, 0.55);
+  color: white;
+  padding: 5px 10px;
+}
+.head input::placeholder {
+  color: #fafafa;
+}
+.descr{
+    font-size: 28px;
+    font-weight: 700;
+}
+.key{
+    font-weight: 800;
+}
+.head .searchBtn {
+  height: 35px;
+  width: 85px;
+  background-color: rgb(75, 75, 255);
+  color: white;
+  font-size: 24px;
+  outline: none;
+  border: none;
+}
+.location {
+  padding: 5px 15px;
+  background-color: rgb(75, 75, 255);
+  color: white;
+  width: 170px;
+  height: 35px;
+  font-size: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  border: none;
+}
+
+.city-name {
+  color: white;
+  width: 100%;
+  text-align: center;
+}
+main {
+  display: flex;
+  align-items: start;
+  justify-content: center;
+}
+.weather-data {
+  width: 500px;
+  padding-top: 50px;
+  color: white;
+}
+.weather-data h2 {
+  padding-bottom: 15px;
+  text-transform: capitalize;
+}
+.descr {
+  text-transform: capitalize;
+}
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 5px;
+  padding-bottom: 15px;
+}
+.weather-img {
+  display: flex;
+  border: 2px solid white;
+  border-radius: 16px;
+  width: 300px;
+  height: 250px;
+  background-color: rgba(255, 255, 255, 0.44);
+  box-shadow: 0px 0px 10px white;
+  backdrop-filter: blur(15px);
+  align-items: center;
+  justify-content: center;
+  object-fit: cover;
+}
+.weather-img img {
+  width: 100%;
+}
