@@ -2,6 +2,7 @@ const loaderBack = document.querySelector(".loader-back-img");
 const loader = document.querySelector(".loader-back");
 
 document.addEventListener("DOMContentLoaded", () => {
+  // display loader function
   setTimeout(() => {
     loader.style.opacity = "0";
     loaderBack.style.opacity = "0";
@@ -10,6 +11,9 @@ document.addEventListener("DOMContentLoaded", () => {
       loader.classList.add("hidden");
     }, 100);
   }, 2000);
+
+  // call html objects
+  
   const weatherData = document.querySelector(".weather-data");
   const weatherImg = document.querySelector(".weather-img");
   const input = document.querySelector(".input");
@@ -17,6 +21,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const country = document.querySelector(".country");
   let cityName;
   const searchBtn = document.querySelector(".searchBtn");
+  const location = document.querySelector(".location");
+
+  // Getdata function
 
   const getData = async (link) => {
     const req = await fetch(link);
@@ -24,11 +31,13 @@ document.addEventListener("DOMContentLoaded", () => {
     writeData(data);
     console.log(data);
   };
+
   //   write data function
   cityName = input.value != "" ? input.value : "Fergana";
   let apiLink = `https://api.openweathermap.org/data/2.5/weather?units=metric&q=${cityName}&appid=757e304139ffd85c9da4f3578d87c519`;
   getData(apiLink);
 
+  // search cty function
   searchBtn.addEventListener("click", () => {
     loaderBack.classList.remove("hidden");
     loader.classList.remove("hidden");
@@ -43,6 +52,8 @@ document.addEventListener("DOMContentLoaded", () => {
     getData(apiLink);
   });
   input.addEventListener("input", () => {});
+
+  // write data function
 
   const writeData = (DB) => {
     city.textContent = DB.name;
